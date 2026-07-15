@@ -104,6 +104,77 @@ print(type(10/2)) # <class 'float'> 출력
 
 # ==========================================
 
+# ---------------------------------------------------
+# 실습1 - 여러 자료형 변수
+
+count = 3 # int
+temp = 36.5 # float
+name = "james" # str
+is_ok = True # bool
+
+print(count) # 3 출력
+print(temp) # 36.5 출력
+print(name) # james 출력
+print(is_ok) # True 출력
+
+
+# ---------------------------------------------------
+# 실습2 - type()으로 자료형 확인하기
+
+print(type(count)) # <class 'int'> 출력
+print(type(temp)) # <class 'float'> 출력
+print(type(name)) # <class 'str'> 출력
+print(type(is_ok)) # <class 'bool'> 출력
+
+# ---------------------------------------------------
+# 실습3 - 자료형 맞히기 퀴즈
+
+# 100 >>> int
+# 100.0 >>> float
+# "100" >>> str
+
+print(type(100)) # <class 'int'> 출력
+print(type(100.0)) # <class 'float'> 출력
+print(type("100")) # <class 'str'> 출력
+
+# ---------------------------------------------------
+# 실습4 - 문자열 숫자와 숫자 비교하기
+
+# 진짜 숫자끼리 더하기
+print(3 + 5) # 8 출력
+print("3" + "5") # 35 출력
+print("33" + "55") # 3355 출력
+
+# ---------------------------------------------------
+# 실습5 - bool 값 만들어 확인하기
+
+print(3 > 2) # True 출력
+print(5 == 5) # True 출력
+print(type(10 > 8)) # class 'bool' 출력(True/False 포함)
+print(type(10 > 20)) # class 'bool' 출력(True/False 포함)
+
+# ---------------------------------------------------
+# 실습6 - 변수의 자료형 변경하기
+
+age = 38
+print("age >>>", type(age)) # class 'int' 출력
+
+age = 38.5 # 실수로 재할당
+print("age >>>", type(age)) # class 'float' 출력
+
+age = "나이" # str로 재할당
+print("age >>>", type(age)) # class 'str' 출력
+
+# ---------------------------------------------------
+# 실습7 - 직접 자료형 표현하기
+
+device_temp = 88.2 # float
+check_count = 33 # int 
+device_name = "jane" # str
+is_normal = True # bool
+
+
+
 
 
 
