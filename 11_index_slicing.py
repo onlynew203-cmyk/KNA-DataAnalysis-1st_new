@@ -60,4 +60,26 @@ word = 'sensor_01'
 print(word[-2:]) # 01 출력
 
 # ==================================================
-#
+# step 건너뛰며 자르기
+# :: 두 개의 클론으로 step
+# word[::2]는 0번 부터, 2칸씩 건너 뜀 -> word 변수의 0,2,4번 출력(기본값은 1)
+
+word = "rainbow"
+print(word[::]) # rainbow 출력
+print(word[::2]) # ribw (0,2,4,6번) 출력
+
+# 지정된 번호부터 지정된 값을 step하기
+# word[1::2] 1번부터, 2칸씩
+
+word = "StrangerThing"
+print(word[1::2]) # tagrhn 출력
+print(word[2::3]) # rgTn 출력
+
+# 실습 - step으로 건너뛰기
+word = 'PYTHON'
+print(word[::2]) # PTO 출력
+
+# step 음수 - 문자열 뒤집기
+# word[::-1] -> 문자열 전체를 뒤집기 공식 !!
+word = 'PYTHON'
+print(word[::-1]) # NOHTYP 출력
