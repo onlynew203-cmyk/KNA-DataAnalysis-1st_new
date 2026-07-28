@@ -276,3 +276,106 @@ list3.remove(999)
 list3.pop(1)
 del list3[0]
 print(list3) # [24, 28, 26] 출력
+
+# ------------------------------------------------------------------------------------
+# 복습하기
+
+# find() 괄호 안에 것을 찾아, 위치를 반환해줘요
+email = "onyu1221@gmail.com" # email 이란 변수에 str 값 지정
+at = email.find("@") # at 이란 변수에 email에서 "@"의 위치 값을 지정
+print(at) # 8 출력 -> 지정된 값
+print(email.find("@")) # 8 출력 -> "@"의 위치 값
+
+print("기기가 정상으로 작동합니다.".find("정상")) # 4 출력
+# "기기가 정상으로 작동합니다."에서 "정상"을 찾아
+
+# ---------------------------
+# index()
+email = "onyu1221@gmail.com" # email 이란 변수에 str 값 지정
+at = email.index("@")
+print(at) # 8 출력
+print(email[:at]) # @ 앞까지 출력 -> onyu1221
+print(email[at:]) # @ 부터 출력 -> @gmail.com
+print(email[at+1:]) # at+1의 인덱싱 위치 값부터 출력 -> gmail.com
+
+# ---------------------------
+# count() 개수 세기
+num = [1,2,3,4,5,6,6,6]
+print(num.count(6)) # 3 출력
+
+# ---------------------------
+# 인덱스 기준으로 잘라내기
+name = "ABC-007"
+name_index = name.index("-")
+print(name_index) # 3 출력
+print(name[3+1:]) # 4부터 끝까지 출력 -> 007
+print(name[:3]) # 3 앞까지 출력 -> ABC
+# startswith와 endswith로 검사하기
+print(name.startswith("ABC")) # True
+print(name.endswith("7")) # True
+
+# ---------------------------
+# 모두 소문자로 - lower()
+name_first = name[:3]
+print(name_first.lower()) # abc 출력
+# 모두 대문자로 - upper()
+city = "seoul" 
+print(city.upper()) # SEOUL
+# 앞글자만 대문자로 - capitalize()
+print(city.capitalize()) # Seoul
+# 모든 단어의 앞글자를 대문자로 - title()
+status = "we are here"
+print(status.title())
+
+# ---------------------------
+# strip() 앞 뒤 가장자리에서 괄호에 든 것을 제거 -> 중앙에 들어와 있으면 제거 안됩니다
+status = "   we are here.  "
+print(status.strip()) # we are here. 출력
+print(status.strip(".")) #    we are here.  출력 -> .이 중간에 있기 때문에 아무것도 제거 되지 않음
+
+status = "we are here."
+print(status.strip(".")) # we are here 출력
+
+# ---------------------------
+# replace(왼쪽,오른쪽) - 왼쪽을 오른쪽으로 바꿔
+a = "밥 먹었다?"
+print(a.replace("?","!")) # 밥 먹었다! 출력
+
+status = "설비 오류"
+print(status.replace("오류","정상")) # 설비 정상 출력
+
+# ---------------------------
+# split() 괄호에 든 것 기준으로 나누기
+status = "a b c"
+print(status.split()) # ['a', 'b', 'c'] 출력
+
+# ---------------------------
+# join() 리스트를 하나의 문자열로 합침
+join = ["하나", "둘", "셋", "넷", "다섯"]
+print("-".join(join)) # 하나-둘-셋-넷-다섯
+
+# ---------------------------
+# 구분자 통째로 바꾸기
+date = "2026/07/26" # 원래 데이터의 구분자 /를 바꿔보자
+date2 = date.split("/") # /를 기준으로 나눠서
+print("-".join(date2)) # "-" 구분자로 join -> 2026-07-26 출력
+
+# ---------------------------
+# f-str
+# 중간 괄호를 활용해서 따옴표 안에서도 변수를 고대로 활용
+name = "홍길동"
+age = 99
+print(f"{name}님의 나이는 {age}살 입니다") # 홍길동님의 나이는 99살 입니다 출력
+
+# f-str 연산
+a = 34
+b = 52
+c = 81
+# 소숫점 1째 자리까지
+# round(연산자, 소숫점 자리) 사용
+print(round((a + b + c)/3,1)) # 55.7 출력
+# f-str 연산 사용
+print(f"{(a + b + c)/3:.1f}") # 55.7 출력
+
+# ---------------------------
+
