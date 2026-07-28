@@ -318,3 +318,16 @@ text = "1, NORMAL, 25.3"
 label = text.split(",")
 status = label[1].strip().lower()
 print(status) # normal 출력
+
+# ------------------------------------------------------------------------------------
+# f-string 기본 문법
+
+name = '길동'
+age = 25
+print(f'{name}님은 {age}살입니다.') # 길동님은 25살입니다. 출력
+
+# ---------------------------
+# 실습 f-string으로 변수 끼워 출력하기
+name = "PUMP_A"
+temp = 87
+print(f"설비 {name}, 온도 {temp}도") # 설비 PUMP_A, 온도 87도 출력
