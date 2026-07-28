@@ -76,4 +76,42 @@ print(f"type(machines) : {type(machines[0])}") # type(machines) : <class 'str'>
 print(f"type(machines) : {type(float_temps)}") # type(machines) : <class 'list'>
 print(f"type(machines) : {type(float_temps[0])}") # type(machines) : <class 'float'>
 
+# ------------------------------------------------------------------------------------
+# 리스트 슬라이싱
+# 슬라이싱 - 구간 잘라내기
+temps = [31, 32, 33, 34, 35] # int list
+print(temps[1:4]) # [32, 33, 34] 출력 1,2,3 인덱싱 출력 1부터 4 앞까지
+print(temps[-3:]) # 뒤에서 3개 -3, -2, -1 출력
 
+# 슬라이싱 간격 step
+# 리스트명[시작:끝:간격]
+temps = [31, 32, 33, 34, 35, 36, 37, 38, 39, 40] # int list
+print(temps[0:6:2]) # [31, 33, 35]
+print(temps[0:9:2]) # [31, 33, 35, 37, 39]
+print(temps[::2]) # [31, 33, 35, 37, 39]
+print(temps[::3]) # [31, 34, 37, 40]
+# 슬라이싱은 없는 인덱스를 넣으면 []를 반환 !
+
+# 인덱싱 vs 슬라이싱 
+
+# 인덱싱 temps[0]은 값 하나
+# 슬라이싱 temps[0:2]는 리스트
+
+# 없는 인덱스 사용 시 에러
+# 슬라이싱은 있는 만큼만 잘라주기 때문에 없으면 [] 반환, 에러 발생하지 않는다
+
+# ---------------------------
+# 실습 슬라이싱으로 구간 자르기
+temps = [31, 32, 33, 34, 35, 36, 37, 38, 39, 40]
+print(temps[:3]) # [31, 32, 33]
+print(temps[-3:]) # [38, 39, 40]
+print(len(temps[-3:])) # 3
+
+# ---------------------------
+# 실습 데이터를 두 구간으로 나누기
+a = [1,2,3,4,5,6,7,8,9,10,11,12]
+first = a[:6]
+print(first) # [1, 2, 3, 4, 5, 6] 출력
+second = a[-6:]
+print(second) # [7, 8, 9, 10, 11, 12] 출력
+print(len(first), len(second)) # 6 6 출력
