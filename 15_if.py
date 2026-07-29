@@ -107,3 +107,66 @@ elif user_a >= 37.8:
 else:
     print("당신은 정상 체온입니다.")
 print("체온 확인 완료")
+
+# elif의 순서를 주의 !!
+score = 50
+
+if score >= 90:
+    print('우수')
+elif score >= 70:
+    print('보통') 
+elif score >= 50:
+    print('미흡') 
+else:
+    print('비상')
+
+# ---------------------------------------------------------------------
+# not 연산자
+# 괄호로 감싸서 사용
+if not (3 == 5):
+    print("출력됩니다")
+# 3과 5는 같지 않으니 False가 되지만
+# 앞에 not이 있어서 False를 True로 뒤집어 if가 인식
+
+# ---------------------------
+# 실습 설비 온도 상태 판정하기
+
+temp = int(input("온도를 입력해주세요."))
+if temp > 80:
+    print("위험")
+elif temp > 60:
+    print("주의")
+else:
+    print("정상")
+
+# ---------------------------
+# 실습 두 조건을 모두 만족하는지 검증하기
+
+ID = "admin"
+PW = 1234
+
+user_id = input("아이디를 입력하세요.")
+user_pw = int(input("패스워드를 입력하세요."))
+
+if user_id == ID and user_pw == PW:
+    print("로그인 되었습니다.")
+else:
+    print("다시 로그인 해주세요.")
+
+# ---------------------------
+# 실습 세 값으로 설비 종합 상태 판정하기 (도전)
+
+user_temp = int(input('온도 :'))
+user_vib = float(input('진동 :'))
+user_electric = int(input('전류 :'))
+
+if user_temp > 80 or user_vib > 4.0:
+    print('위험: 즉시 정지')
+elif user_electric > 60 and user_temp > 70:
+    print('주의: 부하 점검')
+elif user_vib > 2.5:
+    print('주의: 진동 관찰')
+else:
+    print('정상')
+
+# ---------------------------------------------------------------------
