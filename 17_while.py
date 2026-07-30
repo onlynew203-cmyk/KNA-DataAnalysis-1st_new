@@ -123,7 +123,6 @@ for i in range(3):
 print("종료")
 
 # ---------------------------
-
 # 실습 플래그로 조건 만족 값 검색하기
 
 n = int(input("값을 입력할 횟수를 입력하세요 : ")) # 횟수를 입력 받기
@@ -138,3 +137,187 @@ if found: # 찾으면
 else: # 찾지 못한 경우에
     print("없음") # 프린트해요
 
+# ---------------------------
+# 실습 조건에 맞는 값만 출력하기
+
+temps = [20,21,31,23,35,25,32]
+for t in temps:
+    if t >= 30:
+        print("고온: ",t)
+
+# ---------------------------
+# 실습 두 조건을 모두 만족하는 값 고르기
+
+hours = [3, 14, 24, 5, 18, 9]
+for h in hours:
+    if h >= 5 and h <=10:
+        print(h)
+
+# ---------------------------
+# 실습 조건에 맞는 값만 골라 평균 구하기
+temps = [20,21,31,23,35,25,32] # 온도 리스트 변수 지정
+temps_sum = 0 # 온도 합계 변수 지정
+count = 0 # 개수 변수 지정
+for t in temps:
+    if t > 30: # 온도가 30을 초과하면
+        temps_sum += t # 누적시킨다
+        count += 1 # 개수도 누적시킨다(평균값을 구하기 위함)
+print(f"고온 평균: , {(temps_sum / count):.2f}") # 고온 평균: , 32.67 출력
+
+# ---------------------------------------------------------------------
+# 빈 리스트에서 시작해 값 채우기
+# append 사용
+
+temps = [25, 26, 24, 28]
+doubled = []
+for t in temps:
+    doubled.append(t * 2)
+print(doubled) # [50, 52, 48, 56]
+
+# ---------------------------
+# 실습 
+# 기존 배열의 모든 요소에 *3의 값을 가진 새로운 리스트 생성
+
+temps = [20,21,31,23,35,25,32] # 온도 리스트 변수 지정
+doubled = []
+
+for t in temps:
+    doubled.append(t * 3)
+print(doubled)
+
+# ---------------------------------------------------------------------
+# 조건에 맞는 값으로 새 리스트 만들기
+# for, if, append 사용
+
+temps = [25, 32, 28, 35, 27]
+high = []
+for t in temps:
+    if t > 30:
+        high.append(t)
+print(high) # [32, 35]
+
+# ---------------------------
+# 실습 
+temps = [5, 2, 8, 3, 7]
+high = []
+low = []
+
+for t in temps:
+    if t < 5:
+        low.append(t)
+    elif t > 5:
+        high.append(t)
+
+print("high: ", high)
+
+## 추가
+# 복습 sort(): 원본 배열을 오름차순으로 정렬
+# 하지만 반환은 안해주니까 print로 찍으면 none 출력
+print("low: ", low.sort())
+
+# 정렬된 배열로 출력하고 싶다면 아래처럼
+low.sort()
+print(low)
+
+# ---------------------------
+# 실습 조건에 맞는 값으로 새 리스트 만들기
+
+temps = [25, 32, 38, 13, 37, 22, 29]
+high_temps = []
+
+for t in temps:
+    if t > 30:
+        high_temps.append(t)
+print("초과 값: ",high_temps)
+print("개수: ",len(high_temps))
+
+# ---------------------------
+# 실습 값을 가공해 새 리스트 만들기
+
+temps = [20, 32, 18, 16, 17, 22]
+empty = []
+
+for t in temps:
+    empty.append(t * 1.8 + 32)
+print(empty) # [68.0, 89.6, 64.4, 60.8, 62.6, 71.6] 출력
+
+# ---------------------------------------------------------------------
+# 리스트 안의 리스트
+rows = [["펌프", 25],["모터", 32],["압축기", 28]]
+# 표(행, 열)처럼 한 줄에 여러 값이 묶인 데이터
+# 바깥 대괄호를 "행", 안쪽 인덱스 리스트를 "열"
+
+print(rows[0]) # ["펌프", 25] 출력
+print(type(rows[0])) # list 타입
+print(type(rows)) # list 타입
+
+# 중첩된 리스트 안의 값에 접근하고 싶다면
+print(rows[1][1]) # 32 출력
+# 1. rows[1]을 찾음
+# 2. ["모터", 32]의 [1]을 찾음
+# 32 출력
+# 중첩된 리스트 내부의 값은 대괄호를 여러번 이어서 접근한다
+
+# 리스트 안의 리스트 온도 값만 출력하기
+rows = [["펌프", 25],["모터", 32],["압축기", 28]]
+for r in rows:
+    print(r[0],"온도", r[1])
+# rows는 리스트를 담고 있는 큰 리스트
+# r는 rows 안에 있는 작은 리스트 / ex) ["펌프", 25]
+
+
+# ---------------------------
+# 실습 센서 데이터 종합 분석하기
+temps = [20, 32, 18, 16, 17, 22] # 온도 리스트
+total = 0
+for t in temps: # temps 안에 있는 값을 하나씩 꺼내서 t에 넣어라
+    total += t # t의 누적
+    print("전체 평균: ",round(total/len(temps),2))
+hot = []
+for t in temps:
+    if t > 30:
+        hot.append(t)
+hot_total = 0
+for t in hot:
+    hot_total += t
+print("고온 평균: ", hot_total/len(hot))
+print("고온 개수: ", len(hot))
+
+# ========
+# 실습 복습
+# 조건에 맞는 값으로 새 리스트 만들기
+
+temps = [1,2,3,4,5]
+hots = [] # 뜨거운 걸 담을게요
+for t in temps: # 온도 리스트 안에 있는 값을 하나씩 꺼내서 t에 담아라
+    if t > 3: # 만약에 t가 3보다 크면
+        hots.append(t) # 뜨거운 것 리스트에 담아라
+print(len(hots)) # 2 출력 --> 뜨거운 것 리스트 안에 있는 것의 개수 = 리스트의 길이
+print(hots) # [4, 5] 출력
+
+# ========
+# 실습 복습
+# 값을 가공해 새 리스트 만들기
+subs = [2,3,4,5,6]
+hwas = []
+for t in subs:
+    hwas.append(t * 1.8 + 32) # 요소를 계산해서 hwas에 담아야하니까 t에다 곱해야해
+print(hwas) # [35.6, 37.4, 39.2, 41.0, 42.8]
+
+# ========
+# 실습 복습
+# 센서 데이터 종합 분석하기
+
+temps = [11, 22, 33, 44, 55]
+total = 0
+hots = []
+for t in temps:
+    total += t
+print("전체 평균: ", (total/len(temps))) # 전체 평균:  33.0
+hots_total = 0
+for t in temps:
+    if t > 30:
+        hots.append(t)
+        hots_total += t
+print("고온 갯수: ",len(hots)) # 고온 갯수:  3
+print("고온 평균: ",hots_total/len(hots)) # 고온 평균:  44.0
