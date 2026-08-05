@@ -4,3 +4,9 @@
 # ③ path.exists로 그 경로가 있는지 참·거짓 확인
 # ④ if로 있으면·없으면 다른 메시지 출력
 
+import os
+
+file_path_2 = os.path.join("practice", "30-2_module_prac.py")
+
+if os.path.exists(file_path_2):
+    print(f"파일 있음: {file_path_2}")
